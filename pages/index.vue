@@ -39,3 +39,9 @@ section.results(v-if="results")
     }
   }
   </script>
+
+  <style lang="scss" scoped>
+  h1 {
+    color: $primary-color;
+  }
+  </style>

@@ -4,3 +4,7 @@ nav
 main
   slot
 </template>
+
+<style lang="scss">
+@import '~/assets/styles/main.scss';
+</style>
