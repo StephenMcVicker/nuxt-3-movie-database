@@ -1,6 +1,8 @@
 <template lang="pug">
 main
-  h1 Nuxt Movie Database
+  h1 {{ $t('appHeader') }}
+  h2 {{ $t('hello', { name: 'vue-i18n' }) }}
+  p {{ $t('test') }}
 section
   input(type="text"
         placeholder="Search for a movie"
