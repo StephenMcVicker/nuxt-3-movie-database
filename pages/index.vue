@@ -10,20 +10,20 @@ section.results(v-if="results")
   h2 Results
     ul
       li(v-for="result in results.results"
-          :key="result.id")
+         :key="result.id")
         span {{ result.title }}
-  </template>
+</template>
 
   <script setup lang="ts">
 
-  import type {APIResponse} from "@/types/APIResponse";
+  import type { APIResponse } from "@/types/APIResponse";
 
   const searchTerm = ref('');
   const results = ref<APIResponse>();
 
   const url = computed (() => {
     return `api/movies/search?query=${searchTerm.value}`;
-  })
+  });
 
   const search = () => {
     console.log(searchTerm.value);
@@ -37,7 +37,7 @@ section.results(v-if="results")
       results.value = data.value;
       console.log(results.value);
     }
-  }
+  };
   </script>
 
   <style lang="scss" scoped>
