@@ -1,0 +1,6 @@
+{
+  "appHeader": "Nuxt Movie Database",
+  "hello": "Hello, {name}!",
+  "language": "Language",
+  "test": "Test from i18n"
+}
