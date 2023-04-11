@@ -7,7 +7,6 @@ section
   input(type="text"
         placeholder="Search for a movie"
         v-model="searchTerm")
-button(@click="search") Search
 section.results(v-if="results")
   h2 Results
     ul
@@ -27,9 +26,8 @@ section.results(v-if="results")
     return `api/movies/search?query=${searchTerm.value}`;
   })
 
-  const search = () => {
-    console.log(searchTerm.value);
-    const {data, error} = useFetch<APIResponse>(url.value);
+  watchEffect(() => {
+    const { data, error } = useFetch<APIResponse>(url.value);
 
     if (error.value) {
       console.log(error.value);
@@ -39,7 +37,7 @@ section.results(v-if="results")
       results.value = data.value;
       console.log(results.value);
     }
-  }
+  });
   </script>
 
   <style lang="scss" scoped>
